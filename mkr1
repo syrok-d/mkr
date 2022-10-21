@@ -1,0 +1,31 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] massiv = {2, 4, -1, 0, 7, 9};
+        int N = massiv.length;
+        int minm = massiv[0];
+        int maxm = massiv[0];
+        int minind = 0;
+        int maxind = 0;  //инициализация переменных
+
+        System.out.println("Массив: " + Arrays.toString(massiv)); //вывод массива в виде строки
+
+        for (int i = 1; i < N; i++) {
+            if (minm < massiv[i]) {
+                minm = massiv[i];
+                minind = i; } }
+
+        for (int i = 1; i < N; i++) {
+            if (maxm > massiv[i]) {
+                maxm = massiv[i];
+                maxind = i; } } //поиск минимального и максимального элемента массива
+
+        massiv[minind] = maxm;
+        massiv[maxind] = minm; //замена минимального и максимального элементов массива
+
+        System.out.println("Наименьший элемент массива - " + minm);
+        System.out.println("Наибольший элемент массива - " + maxm);
+        System.out.println("Массив с изменённым порядком: " + Arrays.toString(massiv));  //вывод результатов в консоль
+    }
+}
